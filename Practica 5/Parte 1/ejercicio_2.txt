@@ -1,0 +1,23 @@
+Ejercicio 2 - Practica 5 parte 1 - OO2
+
+2.1 Protocolo de Cliente
+
+El protocolo se podría mejorar simplemente haciendo Refactoring Rename Method, ya que los nombres de los metodos
+no indican claramente que es lo que hacen.
+
+protected double lmtCrdt() --> protected double limiteDeCredito()
+
+protected double mtFcE(LocalDate f1, LocalDate f2) --> protected double montoFacturadoEntreFechas(LocalDate f1, LocalDate f2)
+
+protected double mtCbE(LocalDate f1, LocalDate f2) --> protected double montoCobradoEntreFechas(LocalDate f1, LocalDate f2)
+
+2.2 Participación en proyectos
+
+El 2do diseño es mucho más adecuado que el 1ro, porque simplemente delega al proyecto verificar en su variable de instancia si la persona
+se encuentra en su colección, en cambio en el 1er diseño la clase Persona le pide la colección al proyecto (envidia de atributos), sobre
+todo sabiendo que la clase contenida es Persona.
+
+2.3 Cálculos
+
+Se podría tener otros metodos que calculen el promedio de edades y el salario total utilizando streams (solución más linda que el for-each) 
+y que el  método original, imprimirValores, simplemente haga lo que su nombre indica, imprimir (por supuesto que llamando a los metodos nuevos).
