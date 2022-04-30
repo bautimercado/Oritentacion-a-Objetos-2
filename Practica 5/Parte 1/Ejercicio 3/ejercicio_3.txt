@@ -1,0 +1,39 @@
+3.1 Empleados
+
+  Vemos 3 clases, EmpleadoTemporario, EmpleadoPlanta y EmpleadoPasante. En los 3 logramos ver que tienen código duplicado 
+(Duplicate Code), además de que son clases algo largas(?), se podría hacer una jerarquia de clases, tal que las 3 clases iniciales
+la extiendan, con esto conseguimos reutilizar código que se encontraba duplicado.
+  Además el método saldo es un metodo algo largo, se podría hacer un extract method, crear un método aparte que calcule los valores extras.
+
+3.2 Juego
+
+  Este programa cuenta con dos clases, Jugador y Juego, la clase Juego, en dos métodos, recibe como parámetro un jugador y le modifica
+su puntuación (Feature Envy). Lo que haría es crear métodos en la clase Jugador con los mismos nombres y que Jugador modifique sus
+puntos y que la clase Juego simplemente delegue (Move Method).
+
+3.3 Publicaciones
+
+  Contamos con un diagrama UML con 3 clases, PostApp, Post y Usuario, la clase PostApp contiene un método (ultimosPosts) que retorna los últimos
+n posts que no pertenecen a un usuario, el problema con este método es que es demasiado largo (Large Method), la solución que propongo es 
+crear otros métodos pertenecientes a la clase PostApp que se encarguen de algunas partes del método original, y este último simplemente los
+llame y retorne el resultado esperado.
+
+3.4 Carrito de compras
+
+  Podemos ver un diagrama con 3 clases, Carrito, ItemCarrito y Producto, la clase carrito contiene un método donde por retorna el monto total
+de los productos que están en el carrito, el problema con eso es que la clase Carrito utiliza atributos pertenecientes a ItemCarrito (Feature Envy)
+ItemCarrito debería tener un método que devuelva el resultado de multiplicar el precio del producto y la cantidad que se lleva de el, y Carrito
+delegar esa tarea (llamarla por cada ItemCarrito que contiene en su coleccción).
+
+3.5 Envio de pedidos
+
+  Se tienen 3 clases, Supermercado, Usuario y Dirección, la clase Supermercado contiene un método que notifica al usuario sobre el envío de un
+pedido, este invoca a un método de la clase usuario llamado getDirecccionFormateada, este método de la clase usuario utiliza los atributos per-
+tenecientes a la clase Dirección (Feature Envy), la clase Dirección debería tener un método que devuelva sus datos del modo que lo hacia el 
+Usuario y este que delegue dicha tarea.
+
+3.6 Peliculas
+
+  Se cuenta con un UML con 3 clases, HBOO, Pelicula y Usuario, la clase Usuario tiene un método llamado calcularCostoPelicula el cual contiene
+una sentencia switch para los distintos tipos de suscripcion que un usuario puede tener, para mejorar está solución se podría crear una interfaz
+Suscripción y que suscripción concreta implemente dicha interfaz e implemente el método de manera distinta. (Replace conditional with Polymorphism)
