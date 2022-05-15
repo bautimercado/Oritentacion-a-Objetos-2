@@ -14,10 +14,12 @@
 
 ## Practica 4
 
-  Patrones wrappers
-  Patrón Decorator - Patrón Proxy
+  Patrones wrappers: Patrón Decorator - Patrón Proxy
 
 ## Practica 5
 
-  Refactoring - Tipos de refactoring
-  Bad smells
+  Refactoring - Tipos de refactoring - Bad smells
+  
+## Practica 6
+
+  Frameworks - Java Logging Framework
